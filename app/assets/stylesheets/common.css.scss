@@ -1,0 +1,635 @@
+@import "normalize";
+@import "bourbon";
+@import "font-awesome";
+@import "variables";
+@import "highlight_js/github";
+
+// base
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), font-url("ubuntu.woff") format('woff');
+}
+
+body {
+  color: #333;
+  background-color: #efefef;
+  font-size: 14px;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: $commonLineHeight;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+  margin: 0;
+}
+
+h1 {
+  font-size: 35px;
+  line-height: 50px;
+}
+
+h2 {
+  font-size: 25px;
+  line-height: 30px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+ul, ol {
+  padding-left: 2em;
+}
+
+a {
+  color: $linkColor;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($linkColor, 10%);
+  }
+}
+
+a [class^="icon-"],
+a [class*=" icon-"] {
+  width: 1.2em;
+  text-align: center;
+  display: inline-block;
+}
+
+article {
+  font-size: 16px;
+  line-height: 25px;
+  word-wrap: break-word;
+
+  h1 {
+    margin: 30px 0;
+  }
+
+  h2 {
+    margin: 50px 0 30px;
+  }
+
+  h3 {
+    margin: 50px 0 30px;
+  }
+
+  h4 {
+    margin: 50px 0 30px;
+  }
+
+  p, pre, blockquote, ul{
+    margin: 20px 0;
+  }
+
+  li {
+    margin: 5px 0;
+  }
+
+  a {
+  }
+
+  blockquote {
+    padding: 0 30px;
+    color: #666;
+    position: relative;
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      font-family: FontAwesome;
+      content: "\f10d";
+      color: #999;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &:after {
+      font-family: FontAwesome;
+      content: "\f10e";
+      color: #999;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  code {
+    font-size: 14px;
+    margin: 0 5px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+
+  pre code {
+    margin: 0;
+    padding: 5px 10px;
+    word-break: break-all;
+  }
+
+  img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.icon-spin {
+  @include animation(spin 1s infinite linear);
+}
+
+.logo {
+  font-family: Ubuntu, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.hide {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .show-on-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  .show-on-mobile {
+    display: inherit !important;
+  }
+}
+
+@media (min-width: 960px) {
+  .show-on-tablet {
+    display: none !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .hide-on-tablet {
+    display: none !important;
+  }
+
+  .show-on-tablet {
+    display: inherit !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .show-on-small-screen {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hide-on-small-screen {
+    display: none !important;
+  }
+
+  .show-on-small-screen {
+    display: inherit !important;
+  }
+}
+
+// form
+
+#{$all-text-inputs},
+textarea {
+  border: 1px solid #ccc;
+  padding: $buttonPaddingY;
+  margin-right: 15px;
+  outline: 0;
+  border-radius: $buttonRadius;
+  width: 350px;
+  max-width: 100%;
+  line-height: 20px;
+  @include box-sizing(border-box);
+
+  &.full-width {
+    width: 100%;
+  }
+}
+
+#{$all-text-inputs} {
+  vertical-align: middle;
+}
+
+textarea {
+  height: 150px;
+}
+
+select {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: $buttonPaddingY $buttonPaddingX;
+  outline: 0;
+  border-radius: $buttonRadius;
+}
+
+.input-prepend,
+.input-append{
+  display: table;
+  width: 350px;
+
+  #{$all-text-inputs} {
+    width: 100%;
+  }
+
+  .input {
+    width: 99%;
+    display: table-cell;
+    vertical-align: top;
+    margin: 0;
+  }
+
+  .add-on {
+    width: 1%;
+    display: table-cell;
+    vertical-align: top;
+    background-color: #eee;
+    padding: $buttonPaddingY;
+    border: 1px solid #ccc;
+  }
+}
+
+.input-prepend {
+  .add-on {
+    border-radius: $buttonRadius 0 0 $buttonRadius;
+    border-right: 0;
+  }
+
+  #{$all-text-inputs} {
+    border-radius: 0 $buttonRadius $buttonRadius 0;
+  }
+}
+
+.input-append {
+  .add-on {
+    border-radius: 0 $buttonRadius $buttonRadius 0;
+    border-left: 0;
+  }
+
+  #{$all-text-inputs} {
+    border-radius: $buttonRadius 0 0 $buttonRadius;
+  }
+}
+
+.field {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .field-notice {
+    margin-top: 5px;
+  }
+
+  &.field-error {
+    label {
+      color: $red;
+    }
+
+    textarea,
+    #{$all-text-inputs} {
+      border-color: $red;
+    }
+
+    label.message {
+      margin: 5px 0 0;
+
+      &::before {
+        font-family: FontAwesome;
+        display: inline-block;
+        content: "\f05e"; // ban-icon
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 20px;
+  @include clearfix();
+
+  &:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  legend {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 20px;
+  }
+}
+
+
+// button
+
+@mixin button-color($color, $textColor, $borderColor) {
+  color: $textColor;
+  border: 1px solid $borderColor;
+  background-color: $color;
+  @include linear-gradient($color, darken($color, 2%));
+
+  &:hover,
+  &:focus {
+    color: $textColor;
+    text-decoration: none;
+    @include linear-gradient(lighten($color, 2%), $color);
+    @include box-shadow(0 0 1px rgba(0, 0, 0, 0.3));
+  }
+
+  &.button-actived,
+  &:active {
+    @include linear-gradient(darken($color, 2%), darken($color, 6%));
+    @include box-shadow(inset 0 1px 0 darken($color, 15%));
+  }
+
+  &.button-disabled {
+    color: #999;
+
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: default;
+      background-color: darken($color, 10%);
+      background-image: none;
+      @include box-shadow(none);
+    }
+  }
+}
+
+input[type=submit],
+button,
+.button {
+  padding: $buttonPaddingY $buttonPaddingX;
+  margin-right: 10px;
+  line-height: 20px;
+  font-weight: normal;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: $buttonRadius;
+  cursor: pointer;
+  outline: 0;
+  @include button-color(#fefefe, #333, #ccc);
+
+  &.no-margin {
+    margin: 0;
+  }
+
+  &.button-primary {
+    @include button-color($linkColor, #fff, darken($linkColor, 10%));
+  }
+
+  &.button-green {
+    @include button-color($green, #fff, darken($green, 10%));
+  }
+
+  &.button-danger {
+    @include button-color($red, #fff, darken($red, 10%));
+  }
+
+  &.button-large {
+    font-size: 18px;
+    line-height: 30px;
+    padding: $buttonPaddingY $buttonPaddingX * 1.5;
+  }
+}
+
+a.button:hover {
+  text-decoration: none;
+}
+
+.button-group {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+
+  &.no-margin {
+    margin: 0;
+  }
+
+  input[type=submit],
+  button,
+  .button {
+    margin-right: 0;
+    border-right-width: 0;
+    border-radius: 0;
+
+    &:first-child {
+      border-radius: $buttonRadius 0 0 $buttonRadius;
+    }
+
+    &:last-child {
+      border-right-width: 1px;
+      border-radius: 0 $buttonRadius $buttonRadius 0;
+    }
+  }
+}
+
+// dropdown
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+
+  a {
+    color: #333;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .dropdown-toggle {
+    position: relative;
+    padding: $buttonPaddingY ($buttonPaddingX + 15px) $buttonPaddingY $buttonPaddingX;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+
+    &.button {
+      margin-right: 0;
+    }
+
+    &:after {
+      position: absolute;
+      right: 0;
+      padding-right: 10px;
+      font-family: FontAwesome;
+      content: "\f0d7";
+    }
+
+    &.no-arrow {
+      &:after {
+        content: none;
+      }
+
+      .show-on-active {
+        display: none;
+      }
+
+      .hide-on-active {
+        display: inline;
+      }
+    }
+  }
+
+  &.actived {
+    .dropdown-toggle.no-arrow {
+      &:after {
+        content: none;
+      }
+
+      .show-on-active {
+        display: inline;
+      }
+
+      .hide-on-active {
+        display: none;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    display: none;
+    margin: 2px 0 0;
+    padding: 3px 0;
+    z-index: 1000;
+    position: absolute;
+    min-width: 100%;
+    top: 100%;
+    left: 0;
+    border-radius: 2px;
+    background: #fff;
+    white-space: nowrap;
+    @include box-shadow(0 2px 5px 1px rgba(0, 0, 0, 0.3));
+
+    &.align-right {
+      left: auto;
+      right: 0;
+    }
+
+    li {
+      display: block;
+      cursor: pointer;
+      float: none;
+
+      hr {
+        margin: 3px 0;
+      }
+
+      a {
+        display: block;
+        padding: $buttonPaddingY $buttonPaddingX;
+
+        &:hover {
+          color: $linkColor;
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &.actived {
+    .dropdown-toggle.button {
+      @include linear-gradient(darken(#fff, 6%), darken(#fff, 9%));
+    }
+
+    .dropdown-toggle:after {
+      content: "\f0d8";
+    }
+
+    .dropdown-menu {
+      display: block;
+    }
+  }
+}
+
+.quiet {
+  color: #999;
+
+  a {
+    color: #999;
+
+    &:hover {
+      color: #333;
+    }
+  }
+}

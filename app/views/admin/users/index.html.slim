@@ -1,0 +1,17 @@
+- append_title '文章'
+
+table.item-table
+  tbody
+    tr
+      th 用户名
+      th 邮箱
+      th 全名
+      th.min 注册日期
+    - @users.each do |user|
+      tr
+        td = link_to user.name, admin_user_path(user)
+        td = user.email
+        td = user.full_name
+        td.min = user.created_at.to_s :db
+
+= paginate @users, :theme => :dashboard

@@ -1,0 +1,247 @@
+$topbarPadding: 15px 25px;
+$topbarMinPadding: 15px 20px;
+
+#topbar {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  @include clearfix();
+  @include box-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+
+  .topbar-nav {
+    margin: 0;
+    padding: 0;
+    @include clearfix();
+  }
+
+  .topbar-nav-item {
+    float: left;
+    display: block;
+
+    &.text {
+      padding: $topbarPadding;
+      font-weight: bold;
+    }
+
+    .dropdown-toggle {
+      padding-right: 45px;
+
+      &:after {
+        padding-right: 25px;
+      }
+    }
+
+    .dropdown-menu {
+      margin-top: 4px;
+
+      &.last {
+        margin-right: 3px;
+      }
+    }
+
+    .search-form {
+      padding: 8px 20px;
+      position: relative;
+    }
+
+    .search-input {
+      margin-right: 0;
+      border: none;
+      vertical-align: baseline;
+      width: 250px;
+    }
+
+    .search-close {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: 0;
+      padding: 15px;
+      margin: 0;
+      background: transparent;
+      color: #999;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: transparent;
+        @include box-shadow(none);
+        color: #333;
+      }
+    }
+
+    a {
+      padding: $topbarPadding;
+      display: block;
+      cursor: pointer;
+      font-weight: bold;
+      color: #444;
+
+      &.min {
+        padding: $topbarMinPadding;
+      }
+
+      &:hover {
+        color: $linkColor;
+      }
+    }
+
+    &.actived {
+      a {
+        color: $linkColor;
+        padding-bottom: 11px;
+        border-bottom: 4px solid $linkColor;
+      }
+    }
+  }
+
+  .searching {
+    .topbar-nav-item.actived a {
+      padding-bottom: 15px;
+      border-bottom: none;
+      color: #444;
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    .search-form {
+      padding-bottom: 4px;
+      border-bottom: 4px solid $linkColor;
+    }
+
+    .search-close {
+      display: block;
+    }
+
+    .hide-on-searching {
+      display: none !important;
+    }
+
+    .topbar-nav-item.search {
+      display: block !important;
+    }
+  }
+
+  .pull-right {
+    .topbar-item {
+      border-right: none;
+      border-left: 1px solid #ddd;
+    }
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 50px;
+    left: -250px;
+    bottom: 0;
+    border-top: 1px solid #ddd;
+    width: 250px;
+    z-index: 999;
+    background-color: white;
+    @include transition(left 0.2s);
+
+    hr {
+      margin: 5px 0;
+    }
+  }
+
+  .sidebar-item {
+    a {
+      padding: $topbarMinPadding;
+    }
+
+    .dropdown {
+      width: 100%;
+    }
+
+  }
+
+  .sidebar-background {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 990;
+    display: none;
+  }
+
+  &.show-sidebar {
+    .sidebar {
+      left: 0;
+      @include box-shadow(5px 0 5px -5px rgba(0, 0, 0, 0.3));
+    }
+
+    .sidebar-background {
+      display: block;
+    }
+  }
+}
+
+#main {
+  .container {
+    width: 768px;
+    margin: 70px auto 20px;
+  }
+
+  .inner {
+    padding: 20px;
+  }
+
+  .main-section {
+    background-color: white;
+    border-radius: 2px;
+    margin-bottom: 20px;
+
+    @include box-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+
+    h3.title {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+#paginator {
+  position: relative;
+  text-align: center;
+
+  .pages {
+    display: inline-block;
+    padding: 8px 0;
+    font-weight: bold;
+    color: #555;
+  }
+
+  .prev {
+    position: absolute;
+    left: 0;
+  }
+
+  .next {
+    position: absolute;
+    right: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #main {
+    .container {
+      width: 95%;
+    }
+  }
+
+  #topbar {
+    .topbar-nav-item {
+      .search-input {
+        width: 150px;
+      }
+    }
+  }
+}

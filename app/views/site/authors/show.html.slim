@@ -1,0 +1,38 @@
+- append_title @author.display_name
+
+header#topbar.clearfix
+  a.topbar-button.pull-left href=(site_authors_path)
+    i.icon-chevron-left
+    = t '.other_authors'
+
+header#profile
+  .container
+    .inner
+      .profile
+        .avatar
+          = image_tag @author.gravatar_url(:size => 120)
+        .info
+          h1
+            = @author.display_name
+          .description
+            = simple_format @author.description
+
+section#main
+  .container
+    .inner
+      - @articles.each do |article|
+        article
+          h1
+            = link_to article.title, site_article_path(article, :urlname => article.urlname)
+          .summary
+            = link_to article_summary_body(article.body), site_article_path(article, :urlname => article.urlname)
+          .continue
+            a href=(site_article_path(article, :urlname => article.urlname))
+              = t '.continue_reading'
+              '
+              i.icon-long-arrow-right
+
+section#paginator
+  .container
+    .inner
+      = paginate @articles, :theme => 'site'

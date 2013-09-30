@@ -1,0 +1,491 @@
+.editor-container {
+  position: relative;
+
+}
+
+#editor-topbar {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  @include transition(top 0.15s ease);
+
+  ul.top-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include clearfix();
+
+    .icon-level-up:before {
+      display: inline-block;
+    }
+
+    > li {
+      display: inline-block;
+      float: left;
+    }
+
+    .top-nav-button {
+      padding: 15px $commonPadding;
+      display: block;
+      color: #555;
+      @include transition(all 0.15s ease);
+
+      i {
+        margin-right: 0;
+      }
+
+      &:hover {
+        background-color: #f9f9f9;
+      }
+    }
+  }
+
+  .dropdown-menu li a {
+    padding: 15px $commonPadding;
+  }
+
+  .pull-right {
+    padding: 15px $commonPadding;
+
+    .button-group,
+    .button {
+      display: inline;
+      vertical-align: baseline;
+    }
+  }
+
+  #save-status {
+    display: inline;
+    margin-right: 10px;
+    color: #999;
+    cursor: pointer;
+
+    .saving,
+    .saved,
+    .retry {
+      display: none;
+    }
+
+    .saved:hover {
+      color: #555;
+    }
+
+    .show {
+      display: inherit;
+    }
+  }
+}
+
+#editwrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-top: 50px;
+  @include transition(margin-top 0.15s ease);
+
+  .main,
+  .sidebar {
+    height: 100%;
+    position: relative;
+  }
+
+  .scrollable {
+    overflow: auto;
+    height: 100%;
+    position: relative;
+  }
+
+  .sidebar {
+    display: none;
+    @include box-shadow(-1px 0 1px #ccc);
+    .content {
+      padding-top: 34px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    nav ul {
+      li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+
+        &.actived,
+        &:hover {
+          cursor: pointer;
+          background: #f9f9f9;
+        }
+
+        .title {
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+
+        .user {
+          color: #999;
+          margin-bottom: 5px;
+        }
+
+        .button {
+          padding: 3px 5px;
+        }
+
+        .action {
+          display: none;
+        }
+
+        &.actived {
+          .action {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  &.show-sidebar {
+    @include clearfix();
+
+    .main {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 350px;
+      border: 0;
+    }
+
+    .sidebar {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 350px;
+      background-color: #fff;
+    }
+
+  }
+
+  .toolbar {
+    background-color: #555;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    @include box-shadow(0 1px 8px rgba(0, 0, 0, 0.3));
+
+    .label {
+      padding: 7px 10px;
+      color: #fff;
+      display: inline-block;
+      @include box-sizing(border-box);
+    }
+
+    ul.toolbar-buttons {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      @include clearfix();
+
+      [class^="icon-"], [class*=" icon-"] {
+        margin-right: 0;
+      }
+
+      > li {
+        display: inline-block;
+        float: left;
+
+        .toolbar-button {
+          padding: 7px 10px;
+          text-align: center;
+          display: block;
+          color: #fff;
+
+          &:hover {
+            text-decoration: none;
+            color: #555;
+            background-color: #f9f9f9;
+          }
+
+          &.actived,
+          &:active {
+            color: #555;
+            background-color: #f9f9f9;
+          }
+
+          &.disabled,
+          &.disabled:hover,
+          &.disabled:focus {
+            color: #999;
+            background-color: #555;
+          }
+        }
+      }
+
+      p, h1, h2, h3, h4, pre, blockquote {
+        padding: 0;
+        margin: 0;
+      }
+
+      .dropdown {
+        position: relative;
+
+        .dropdown-toggle {
+          padding-right: 25px;
+          font-weight: bold;
+
+          &:after {
+            right: 0;
+            padding-right: 10px;
+          }
+        }
+
+        .dropdown-menu {
+          li {
+            display: block;
+            float: none;
+
+            a {
+              display: block;
+              padding: 7px 10px;
+
+              h1, h2, h3, h4 {
+                line-height: 100%;
+              }
+            }
+          }
+        }
+
+        &.actived {
+          .dropdown-toggle {
+            color: #555;
+            background-color: #f9f9f9;
+          }
+        }
+      }
+    }
+  }
+
+  #editarea {
+    padding-top: 34px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .article {
+      margin: 0 auto;
+      width: $editor-container-width;
+      max-width: 100%;
+      background: #FFF;
+      padding:  70px;
+      outline: 0;
+      min-height: 1024px;
+      margin-top: 5px;
+      margin-bottom: 150px;
+      position: relative;
+      @include box-shadow(0 0 0 1px #ccc);
+      @include box-sizing(border-box);
+
+      @media (max-width: $editor-container-width) {
+        margin-top: 0;
+        margin-bottom: 0;
+        border: none;
+        padding:  70px / $editor-container-width * 100%;
+      }
+
+      &.init {
+        h1 {
+          position: relative;
+
+          &:after {
+            content: "Title here";
+            color: #ccc;
+            float: left;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  #alert-messages {
+    position: absolute;
+    right: $commonPadding;
+    top: 35px + $commonPadding;
+    margin-right: 0;
+  }
+
+  #readonly-message {
+    display: none;
+  }
+
+  &.readonly {
+    #readonly-message {
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      display: inline-block;
+      position: absolute;
+      left: $commonPadding;
+      top: 35px + $commonPadding;
+      border-radius: 3px;
+      font-size: 20px;
+    }
+
+    #formator-buttons {
+      .toolbar-button {
+        color: #999;
+        background-color: #555;
+        cursor: default;
+      }
+    }
+  }
+
+}
+
+.pick-up-topbar {
+  #editor-topbar {
+    top: -50px;
+  }
+
+  #toolbar {
+    top: 0;
+  }
+
+  #editwrap {
+    margin-top: 0;
+  }
+
+  #pick-up-button {
+    i.icon-double-angle-up:before {
+      content: "\f103";
+    }
+  }
+}
+
+#help-modal {
+  width: 500px;
+
+  table {
+    width: 100%;
+
+    tr {
+      &:nth-child(odd) {
+        background-color: #f9f9f9;
+      }
+    }
+
+    th, td {
+      padding: 7px;
+      vertical-align: top;
+      text-align: center;
+    }
+
+    th {
+    }
+  }
+}
+
+#image-uploader-modal {
+  width: 630px;
+
+  .preview,
+  .dropable {
+    height: 280px;
+    width: 100%;
+    border: 2px dashed #ccc;
+    display: table;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+    @include box-sizing(border-box);
+
+    .center {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      padding: 15px;
+    }
+
+    &.start .center {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      color: #999;
+    }
+
+  }
+
+  .dropable.start {
+    .message {
+      display: none;
+    }
+
+    .progress {
+      display: block;
+    }
+  }
+
+  .button-fileinput {
+    position: relative;
+    overflow: hidden;
+
+    input {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      height: 100%;
+    }
+  }
+
+  .filename {
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+  }
+
+  .progress {
+    display: none;
+    height: 5px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 2px;
+
+    .bar {
+      width: 0%;
+      height: 100%;
+      background-color: #ccc;
+    }
+  }
+}
+
+@media (max-width: $editor-container-width) {
+  #editwrap {
+    &.show-sidebar {
+      .main,
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: 50%;
+      }
+    }
+  }
+}

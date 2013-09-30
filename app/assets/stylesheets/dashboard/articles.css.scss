@@ -1,0 +1,97 @@
+#toolbar {
+  .select-all-button {
+    .icon-check-status:before {
+      content: "\f096";
+    }
+
+    &.actived {
+      .icon-check-status:before {
+        content: "\f046";
+      }
+    }
+  }
+}
+
+.articles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .icon-check-status:before {
+    content: "\f096";
+  }
+
+  .article {
+    border-bottom: 1px solid #ddd;
+    position: relative;
+
+    &.selected {
+      background-color: #f9f9f9;
+
+      .icon-check-status:before {
+        color: #333;
+        content: "\f046";
+      }
+    }
+  }
+
+  .article-info {
+    padding: 10px 59px 10px 46px;
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f9f9f9;
+    }
+
+    a {
+      display: inline-block;
+      color: #444;
+      line-height: 30px;
+      font-weight: bold;
+
+      &:hover {
+        color: $linkColor;
+      }
+    }
+  }
+
+  .article-select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 16px 10px 16px 20px;
+    font-size: 16px;
+    color: #999;
+    cursor: pointer;
+
+    &:hover {
+      color: #555;
+    }
+  }
+
+  .article-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 16px 20px;
+    font-size: 16px;
+    color: #999;
+    z-index: 1;
+
+    &:hover {
+      background-color: #f9f9f9;
+      color: #555;
+    }
+  }
+
+}
+
+.empty-message {
+  font-size: 16px;
+  text-align: center;
+  color: #666;
+  font-weight: bold;
+}

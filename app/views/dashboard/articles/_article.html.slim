@@ -1,0 +1,20 @@
+- cache [@space.name, article, I18n.locale] do
+  li.article id=("article-#{article.token}") data-id=(article.token)
+    .article-select
+      i.icon-check-status
+    .article-info
+      a.title href=(edit_dashboard_article_path(:id => article))
+        = article.title
+      .quiet
+        - if article.last_edit_user
+          = article.last_edit_user.display_name
+        - else
+          = article.user.display_name
+        '
+        | 编辑于
+        '
+        = l article.updated_at, :format => :short
+
+    - if article.publish?
+      a.article-link href=(site_article_url(:id => article, :urlname => article.urlname, :host => @space.host, :protocol => 'http')) target='_blank'
+        i.icon-external-link

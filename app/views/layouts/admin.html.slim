@@ -1,0 +1,46 @@
+doctype 5
+html
+  head
+    title = page_title
+    meta content='width=device-width, initial-scale=1.0' name='viewport'
+    link rel="shortcut icon" href=(asset_path("favicon.png"))
+    = javascript_include_tag 'dashboard', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'admin', 'data-turbolinks-track' => true
+    = yield :head
+    = csrf_meta_tags
+  body id=("#{controller_name}-#{action_name}")
+    #topbar
+      ul.topbar-nav.pull-left
+        li.topbar-nav-item
+          a href=(admin_root_path) class=('actived' if controller_name == 'dashboard')
+            i.icon-dashboard
+            = '面板'
+        li.topbar-nav-item
+          a.topbar-button href=(admin_articles_path) class=('actived' if controller_name == 'articles')
+            i.icon-pencil
+            = '文章'
+        li.topbar-nav-item
+          a.topbar-button href=(admin_attachments_path) class=('actived' if controller_name == 'attachments')
+            i.icon-picture
+            = '图片'
+        li.topbar-nav-item
+          a.topbar-button href=(admin_spaces_path) class=('actived' if controller_name == 'spaces')
+            i.icon-group
+            = '写作空间'
+        li.topbar-nav-item
+          a.topbar-button href=(admin_users_path) class=('actived' if controller_name == 'users')
+            i.icon-user
+            = '用户'
+        li.topbar-nav-item
+          a.topbar-button href=(admin_orders_path) class=(controller_name == 'orders' ? 'actived' : nil)
+            i.icon-money
+            = '订单'
+        li.topbar-nav-item
+          a.topbar-button href=(admin_alipay_notifies_path) class=(controller_name == 'alipay_notifies' ? 'actived' : nil)
+            i.icon-info
+            = '支付宝通知'
+    #main
+      .container
+        .main-section
+          .inner
+            = yield

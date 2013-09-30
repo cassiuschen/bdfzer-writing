@@ -1,0 +1,58 @@
+- append_title t('.trashed')
+
+- content_for :topbar do
+  #normal-nav
+    ul.topbar-nav.pull-left
+      = render 'dashboard/share/sidebar'
+      li.topbar-nav-item.text
+        = t '.trashed'
+
+    ul.topbar-nav.pull-right
+      = render 'dashboard/share/config_menu'
+
+  #toolbar.clearfix.hide
+    ul.topbar-nav.pull-left
+      li.topbar-nav-item
+        a.close-button.min
+          i.icon-remove
+      li.topbar-nav-item.text
+        span#selected-count 0
+        '
+        = t '.items'
+    ul.topbar-nav.pull-right
+      li.topbar-nav-item
+        a.select-all-button.min
+          i.icon-check-status
+          '
+          = t '.select_all'
+      li.topbar-nav-item
+        a href=(batch_restore_dashboard_articles_path) data-remote="true" data-method="put" data-batch="true"
+          = t '.restore'
+      li.topbar-nav-item.hide-on-mobile
+        a href=(batch_destroy_dashboard_articles_path) data-remote="true" data-method="put" data-batch="true" data-confirm=(t '.destroy_confirm')
+          = t '.completely_remove'
+      li.topbar-nav-item.hide-on-mobile
+        a href=(trashed_dashboard_articles_path) data-remote="true" data-method="delete" data-confirm=(t '.empty_trash_confirm')
+          = t '.empty_trash'
+      li.topbar-nav-item.show-on-mobile
+        .dropdown
+          a.dropdown-toggle
+            i.icon-wrench
+          ul.dropdown-menu.align-right.last
+            li
+              a href=(batch_destroy_dashboard_articles_path) data-remote="true" data-method="put" data-batch="true" data-confirm=(t '.destroy_confirm')
+                = t '.completely_remove'
+            li
+              a href=(trashed_dashboard_articles_path) data-remote="true" data-method="delete" data-confirm=(t '.empty_trash_confirm')
+                = t '.empty_trash'
+
+.main-section
+  - unless @articles.empty?
+    ul#articles.articles
+      = render :partial => 'article', :collection => @articles
+    - if @articles.total_pages > 1
+      .inner
+        = paginate @articles, :theme => :dashboard
+  - else
+    .inner.empty-message
+      = t '.no_articles'

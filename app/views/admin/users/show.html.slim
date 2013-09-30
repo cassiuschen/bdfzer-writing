@@ -1,0 +1,23 @@
+#tabs
+  | 用户信息
+section#user-info
+  .field
+    label 头像
+    = image_tag @user.gravatar_url
+  .field
+    label 用户名
+    = @user.name
+  .field
+    label 空间
+    ul
+      - @user.spaces.each do |space|
+        li = link_to space.name, admin_space_path(space)
+  .field
+    label Email
+    = @user.email
+  .field
+    label 全名
+    = @user.full_name
+  .field
+    label 资料简述
+    = simple_format @user.description

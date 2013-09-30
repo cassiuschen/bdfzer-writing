@@ -1,0 +1,481 @@
+zh-CN:
+  en: "英文"
+  zh-CN: "中文（简体）"
+  submit: "提交"
+  save: "保存"
+  cancel: "取消"
+  restore: "恢复"
+  success: "成功"
+  update_success: "更新成功"
+  untitled: "无标题"
+  articles: "文章"
+  publish: "已发布"
+  draft: "草稿箱"
+  trash: "回收站"
+  invitation_email_subject: "邀请你加入写作空间 %{name}"
+  being_develop: "该功能正在开发，将来有可能发生变化"
+
+  published_at: "发布于"
+  subscribe: "订阅"
+  author: "作者"
+  articles_count: "%{count} 篇文章"
+  remember_me: "记住我"
+  captcha: "验证码"
+
+  urlname_valid_message: "只能使用字母、数字和 '-' 号"
+
+  page_not_found: "找不到该页面"
+  server_error: "服务器错误"
+
+  export_task_success_email_subject: "Writings.io - 导出完成"
+  import_task_success_email_subject: "Writings.io - 导入解析完成"
+  order_payment_success_email_subject: "Writings.io - 订单支付完成"
+  order_cancel_email_subject: "Writings.io - 订单被取消"
+  password_reset_email_subject: "Writings.io - 密码重置"
+
+  order_paid_message: "订单支付成功，祝您写作愉快！"
+  order_pending_message: "订单处理中，请稍后；处理完成后，系统会发送一封通知邮件。"
+
+  password_reset_email_send: "密码重置邮件已发送到您的邮箱，请注意查收。"
+  password_reset_email_no_found: "找不到该用户。"
+  password_reset_not_found_or_expired: "密码重置链接无效或已过期。"
+  password_reset_success: "密码重置成功！"
+
+  older: "过往"
+  newer: "较新"
+  next_page: "下一页"
+  prev_page: "上一页"
+
+  need_upgrade: "需要升级"
+  need_more_storage: "需要更多储存空间？"
+  upgrade: "升级"
+  plan:
+    free: "免费版"
+    base: "个人版"
+  order_state:
+    opening: "打开"
+    pending: "等待支付"
+    paid: "已支付"
+    canceled: "取消"
+    completed: "完成"
+
+  layouts:
+    home:
+      header:
+        features: "特点"
+        pricing: "费用"
+        signup: "注册"
+        signin: "登录"
+    dashboard:
+      topbar:
+        home: "首页"
+        about: "关于"
+        signup: "注册"
+        login: "登录"
+        all_announcement: "所有公告"
+        account: "账户"
+        billing: "付费"
+        logout: "登出"
+        new_space: "创建写作空间"
+        twitter: "Twitter"
+        bug_report: "报告错误"
+        help: "帮助"
+        features: "特色"
+        select_space: "选择空间"
+      footer:
+        about: '关于'
+        blog: '博客'
+        help: '帮助'
+
+    error:
+      feedback: "问题反馈"
+
+  spaces:
+    new:
+      new_space: "创建写作空间"
+      space_info: "写作空间是你的创作区域，拥有独立的主页、域名、RSS、储存空间和协作成员。"
+  users:
+    new:
+      signup: "注册"
+  user_sessions:
+    new:
+      welcome_back: "欢迎回来"
+      username_or_email: "用户名或邮箱"
+      password: "密码"
+      login: "登录"
+      forgot_password: "忘记密码？"
+  password_resets:
+    new:
+      password_reset: "密码重置"
+      send_reset_email: "发送重置邮件"
+    edit:
+      password_reset: "密码重置"
+      update_password: "更新密码"
+
+  accounts:
+    show:
+      account_settings: "账户设置"
+      login_id: "登录 ID"
+      custom: "个性化"
+      change_password: "更换密码"
+      confirm_change: "确认修改"
+  profiles:
+    show:
+      profile_setting: "个人资料设置"
+      publish_profile: "公开的个人资料"
+
+  dashboard:
+    share:
+      sidebar:
+        new_space: "创建写作空间"
+        articles: "全部文章"
+        trashed: "回收站"
+        pictures: "图片"
+        import: "导入"
+        export: "导出"
+        members: "成员"
+        settings: "空间设置"
+        billing: "付费服务"
+      config_menu:
+        account: "账户"
+        blog: "博客"
+        help: "帮助"
+        contact: "联系"
+        logout: "退出"
+
+      settings_sidebar:
+        account_settings: "账户设置"
+        billing: "付费"
+
+      image_uploader_modal:
+        insert_image: "插入图片"
+        url: "URL 地址"
+        link: "外链"
+        fetch: "抓取"
+        select_file: "选择文件"
+        upload: "上传"
+        drop_here: "拖到此处"
+        preview: "预览"
+
+      link_creator_modal:
+        url: "URL 地址"
+        create_link: "创建链接"
+        unlink: "去掉链接"
+
+    import_tasks:
+      index:
+        format: "格式"
+        file: "文件"
+        start_import: "开始导入"
+        import: "导入"
+        help: "帮助"
+      show:
+        import: "导入"
+        title: "标题"
+        date: "日期"
+        status: "状态"
+        task_success: "解析完成"
+        task_success_detail: "请确认导入条目"
+        task_error: "导入发生错误"
+        task_error_detail: "请联系管理员："
+        task_processing: "导入处理中"
+        task_processing_detail: "导入解析完成后，你将会收到系统邮件并需要确认导入条目，你也可以刷新当前页面检查导入状态："
+        refresh: "刷新"
+        import_select: "导入选中条目"
+
+    export_tasks:
+      index:
+        all: "全部"
+        format: "格式"
+        content: "内容"
+        start_export: "开始导出"
+        export: "导出"
+        help: "帮助"
+      show:
+        export: "导出"
+        task_success: "导出完成"
+        task_success_detail: "点击下载按钮下载存档："
+        task_error: "导出发生错误"
+        task_error_detail: "请联系管理员："
+        task_processing: "导出处理中"
+        task_processing_detail: "导出完成后，你将会收到系统邮件获取下载链接，你也可以刷新当前页面检查导出状态："
+        download: "下载存档"
+        refresh: "刷新"
+
+    settings:
+      show:
+        space_settings: "空间设置"
+        how_to_binding_domain: "如何绑定域名"
+        how_to_setup_disqus: "如何安装 Disqus"
+        how_to_setup_ga: "如何安装 Google Analytics"
+
+    members:
+      index:
+        invite_members: "邀请成员"
+        members: "成员"
+        current_members: "当前成员"
+        contact_space_creator_to_invite_members: "联系空间创建者添加成员"
+      form:
+        send_invitation: "发送邀请"
+        up_to_members_limit: "达到成员上限"
+        message_with_email_invitation: "给邀请邮件附上信息"
+      member:
+        creator: "创建者"
+        remove: "移除"
+        remove_confirm: "确认移除"
+      invitation:
+        waiting_for_accept: "等待确认"
+        remove: "移除"
+        remove_confirm: "确认移除"
+        resend: "再次发送"
+    invitations:
+      show:
+        invitation_detail: "邀请函详情"
+        invite_you_to_join_this_space: "邀请你加入写作空间"
+        you_need_an_account: "你需要一个帐号"
+        already_have_account: "已有帐号？"
+        signup_and_join: "注册并加入"
+        you_are_login_as: "你的帐号是"
+        change_account: "使用另一个帐号？"
+        join_space: "加入空间"
+        current_members: "成员"
+
+    billings:
+      show:
+        billing: "付费"
+        renew: "续费"
+        upgrade: "升级"
+        plan: "套餐"
+        price: "价格"
+        storage: "储存空间"
+        history_versions: "历史记录"
+        article_search: "文章搜索"
+        members: "成员"
+        custom_domain: "绑定独立域名"
+        10_per_1_month: "10元 / 月"
+        current_plan: "当前套餐："
+        expired: "到期"
+        orders: "订单"
+        view_all: "查看全部"
+        custom_domain_notice: "需要自行申请独立域名"
+        refund_notice: "付款后一周内可无理由申请退款，请联系："
+
+    orders:
+      index:
+        billing: "付费"
+        orders: "订单"
+      orders:
+        created_at: "创建时间"
+        plan: "套餐"
+        total_price: "费用"
+        state: "状态"
+        range: "有效时间"
+        no_orders: "没有订单"
+      new:
+        billing: "付费"
+        new_order: "新订单"
+        order: "订单"
+        10_per_1_month: "10元 / 月"
+        50_per_6_month: "50元 / 6个月"
+        100_per_1_year: "100元 / 年"
+        alipay_payment: "支付宝支付"
+      show:
+        billing: "付费"
+        orders: "订单"
+        order_id: "订单 ID"
+        created_at: "创建时间"
+        plan: "套餐"
+        quantity: "数量"
+        total_price: "费用"
+        price: "%{price} 元"
+        state: "订单状态"
+        range: "有效时间"
+        order_question_contact: "对订单有疑问，请联系："
+        order: "订单"
+
+    attachments:
+      index:
+        pictures: "图片"
+        confirm_delete: "确认删除？"
+        no_picture: "没有图片"
+    articles:
+      index:
+        articles: "文章"
+        all: "全部文章"
+        trash: "移到回收站"
+        published: "已发布"
+        drafted: "草稿箱"
+        publish: "发布"
+        draft: "草稿"
+        items: "项"
+        select_all: "选中全部"
+        view: "查看"
+        upgrade: "升级"
+        new_article: "新文章"
+        no_articles: "没有文章"
+        title: "标题"
+        updated_at: "更新时间"
+
+      articles:
+        no_articles: "没有文章"
+
+      article:
+        link: "链接"
+        draft: "草稿"
+        publish: "发布"
+        published: "已发布"
+        move_to_trash: "移到回收站"
+        restore: "还原"
+        delete: "彻底删除"
+        delete_confirm: "确定彻底删除这篇文章？"
+        created_at: "创建于"
+        updated_at: "更新于"
+
+      trashed:
+        trashed: "回收站"
+        items: "项"
+        select_all: "选中全部"
+        empty_trash: "清空回收站"
+        empty_trash_confirm: "确认清空回收站？"
+        completely_remove: "彻底删除"
+        restore: "还原"
+        destroy_confirm: "确认彻底删除所选？"
+        no_articles: "没有文章"
+        title: "标题"
+        updated_at: "更新时间"
+
+      edit:
+        readonly_mode: "只读模式"
+        history_versions: "历史版本"
+        return_newest_version: "回到最新版本"
+        version_limit: "当前帐号可以查看最近5个版本。"
+        need_more_version: "需要查看更多？"
+        urlname_modal:
+          urlname: "URL"
+        edit_topbar:
+          return: "返回文章列表"
+          urlname: "URL"
+          collect: "归类"
+          publish: "发布"
+          draft: "草稿"
+          saving: "保存中"
+          saved: "已保存"
+          save_error: "保存出错"
+          retry: "重试"
+          restore: "还原文章"
+        toolbar:
+          bold_tip: "加粗 Ctrl + B"
+          italic_tip: "斜体 Ctrl + I"
+          strike_tip: "删除线 Ctrl + D"
+          underline_tip: "下划线 Ctrl + Shift + L"
+          link_tip: "插入超链接 Ctrl + L"
+          image_tip: "插入图片 Ctrl + G"
+          orderList_tip: "有序列表 Ctrl + 7"
+          unorderList_tip: "无序列表 Ctrl + 8"
+          normal_text: "普通文本"
+          h1: "文章标题"
+          h2: "二级标题"
+          h3: "三级标题"
+          h4: "四级标题"
+          code: "代码"
+          blockquote: "引用"
+          normal_text_tip: "普通文本 Ctrl + 0"
+          h1_tip: "文章标题 Ctrl + 1"
+          h2_tip: "二级标题 Ctrl + 2"
+          h3_tip: "三级标题 Ctrl + 3"
+          h4_tip: "四级标题 Ctrl + 4"
+          code_tip: "代码 Ctrl + K"
+          blockquote_tip: "引用 Ctrl + Q"
+          help_tip: "帮助 Ctrl + M"
+        help_modal:
+          function: "功能"
+          shortcut: "快捷键"
+          help: "功能菜单"
+          bold: "加粗"
+          italic: "斜体"
+          strike: "删除线"
+          underline: "下划线"
+          link: "插入超链接"
+          image: "插入图片"
+          orderList: "有序列表"
+          unorderList: "无序列表"
+          p: "普通文本"
+          h1: "文章标题"
+          h2: "二级标题"
+          h3: "三级标题"
+          h4: "四级标题"
+          code: "代码"
+          blockquote: "引用"
+          save: "保存"
+          undo: "撤销"
+          redo: "重做"
+
+  mongoid:
+    attributes:
+      space:
+        name: "URL"
+        full_name: "全名"
+        description: "描述"
+        domain: "独立域名"
+        disqus_shortname: "Disqus"
+        google_analytics_id: "Google Analytics"
+        gravatar_email: "Gravatar Email"
+      user:
+        name: "用户名"
+        full_name: "全名"
+        description: "描述"
+        email: "邮箱"
+        locale: "语言"
+        password: "密码"
+        password_confirmation: "密码确认"
+        current_password: "当前密码"
+      order:
+        plan: "套餐"
+        quantity: "数量"
+      profile:
+        name: "名称"
+        description: "描述"
+      article:
+        title: "标题"
+        body: "内容"
+        urlname: "URL"
+      attachment:
+        file: "附件"
+
+  site:
+    articles:
+      index:
+        continue_reading: "继续阅读"
+        home: "首页"
+        about: "关于"
+        authors: "作者"
+        archives: "存档"
+      show:
+        home: "首页"
+    authors:
+      index:
+        authors: "作者"
+        authors_of_space: "%{name}的作者"
+        home: "首页"
+      show:
+        other_authors: "其他作者"
+        continue_reading: "继续阅读"
+    archives:
+      index:
+        archives: "存档"
+        home: "首页"
+
+  errors:
+    messages:
+      extension_white_list_error: "不能上传 %{extension} 文件，允许类型：%{allowed_types}"
+      store_limit: "剩余容量不足"
+      fetch_error: "抓取失败，也许没有权限访问该资源，请改由本地上传"
+      blank: "不能为空"
+      is_not_match: "不正确"
+      space_name: "只能包含小写英文字母，数字和 - 符号"
+      wrong_name_or_password: "错误的用户名或密码"
+
+  recaptcha:
+    errors:
+      verification_failed: "验证码错误，请重试。"
+      recaptcha_unreachable: "验证码访问超时，请重试。"

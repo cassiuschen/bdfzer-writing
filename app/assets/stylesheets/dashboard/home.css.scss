@@ -1,0 +1,189 @@
+body.home {
+  background: white;
+}
+
+#home {
+  .home-container {
+    width: 960px;
+    max-width: 90%;
+    margin: 0 auto;
+    position: relative;
+    @include clearfix();
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .home-header {
+    padding: 30px 0;
+    text-align: center;
+
+    .logo {
+      font-size: 35px;
+      line-height: 50px;
+      float: left;
+      color: #444;
+    }
+
+    nav {
+      position: absolute;
+      top: 10px;
+      right: 0;
+      font-weight: bold;
+
+      ul {
+        @include clearfix();
+      }
+
+      li {
+        float: left;
+
+        a {
+          display: block;
+          padding: 7px 15px;
+          color: #444;
+
+          &:hover {
+            color: $linkColor;
+          }
+        }
+      }
+    }
+  }
+
+  .home-masthead {
+    text-align: center;
+    padding: 50px 0;
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 50px;
+
+      small {
+        display: block;
+        color: #999;
+        font-size: 0.6em;
+      }
+    }
+
+    .masthead-pic {
+      img {
+        width: 90%;
+        @include box-shadow(0 1px 8px rgba(0, 0, 0, 0.3));
+      }
+    }
+
+    .masthead-buttons {
+      margin: 40px 0;
+    }
+  }
+
+  .home-features {
+    padding: 70px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+
+    .feature {
+      margin-bottom: 70px;
+      @include clearfix();
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .feature-pic {
+      width: 55%;
+      float: right;
+
+      img {
+        width: 100%;
+        @include box-shadow(0 1px 8px rgba(0, 0, 0, 0.3));
+      }
+    }
+
+    .feature-info {
+      width: 40%;
+      float: left;
+    }
+
+  }
+
+  .home-pricing {
+    padding: 50px 0;
+
+    .nice-table {
+      width: 90%;
+    }
+
+    .pricing-buttons {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .quiet {
+      text-align: center;
+    }
+  }
+
+  .home-footer {
+    padding: 20px;
+    background-color: #555;
+    border-top: 1px solid #333;
+    color: white;
+    font-weight: bold;
+
+    .pull-right {
+      a {
+        padding: 7px;
+        color: white;
+
+        &:hover {
+          color: #eee;
+        }
+      }
+    }
+  }
+
+  .signup,
+  .login {
+    width: 400px;
+    max-width: 90%;
+    padding: 20px;
+    margin: 50px auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    @include box-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+    @include box-sizing(border-box);
+
+    h2 {
+      margin-bottom: 30px;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #home {
+    .home-header {
+      .logo {
+        float: none;
+        text-align: center;
+        display: block;
+        margin-bottom: 30px;
+      }
+
+      nav {
+        position: relative;
+
+        li {
+          width: 25%;
+        }
+      }
+    }
+  }
+}

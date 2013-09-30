@@ -1,0 +1,25 @@
+- if flash[:success]
+  javascript:
+    AlertMessage.show({
+      type: 'success',
+      text: '#{flash[:success]}',
+      timeout: 3000
+    });
+- if flash[:info]
+  javascript:
+    AlertMessage.show({
+      type: 'info',
+      text: '#{flash[:info]}'
+    });
+- if flash[:warning]
+  javascript:
+    AlertMessage.show({
+      type: 'warning',
+      text: '#{flash[:warning]}'
+    });
+- if flash[:error]
+  javascript:
+    AlertMessage.show({
+      type: 'error',
+      text: '#{flash[:error]}'
+    });
