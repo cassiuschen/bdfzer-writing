@@ -1,4 +1,4 @@
-source 'http://ruby.taobao.org'
+source 'http://rubygems.bdfzer.com'
 
 gem 'rails', '4.0.0'
 
