@@ -3,13 +3,13 @@ defaults: &defaults
   secret_key_base: '71198825e963169a145ef28fd6de8c3edbb69172d4441982b670c0f4374167f4445b1e593cb950e892002c65fdca29bfb079425679e395dde0e0db36ffce387b'
 
   # Main site setting
-  host: 'localhost'
+  host: 'writings.bdfzer.com'
   site_name: 'Writings'
   ssl: false
 
   # Admin access
   admin_emails:
-    - ''
+    - 'chzsh1995@gmail.com'
 
   google_analytics_id: ''
 

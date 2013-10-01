@@ -1,10 +1,10 @@
 # Writings
 
-Source code of writings.io.
+Source code of writings.bdfzer.com.
 
-writings.io will be closed at 2013-12-31, and this project will no longer be maintained.
+writings.io will be opened at 2013-12-31.
 
-![writings](https://raw.github.com/chloerei/writings/master/app/assets/images/writings-io-manager.png)
+![writings](https://raw.github.com/cassiuschen/bdfzer-writing/master/app/assets/images/writings-io-manager.png)
 
 ## Introduction
 

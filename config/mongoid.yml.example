@@ -1,7 +1,7 @@
 production:
   sessions:
     default:
-      database: writings_production
+      database: bdfzer_writings_production
       hosts:
         - localhost:27017
   options:
