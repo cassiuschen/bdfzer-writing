@@ -13,7 +13,7 @@ class Space
   field :full_name
   field :description
   field :gravatar_email
-  field :plan, :type => Symbol, :default => :free
+  field :plan, :type => Symbol, :default => :base
   field :plan_expired_at, :type => Time
   field :storage_used, :default => 0
 
@@ -82,12 +82,12 @@ class Space
     if plan_expired_at.present? && plan_expired_at > Time.now
       case plan
       when :base
-        1.gigabytes
+        10.gigabytes
       else
-        10.megabytes
+        100.megabytes
       end
     else
-      10.megabytes
+      100.megabytes
     end
   end
 
@@ -95,12 +95,12 @@ class Space
     if plan_expired_at.present? && plan_expired_at > Time.now
       case plan
       when :base
-        50
+        5000
       else
-        5
+        5000
       end
     else
-      5
+      5000
     end
   end
 
