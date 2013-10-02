@@ -27,11 +27,11 @@ zh-CN:
   page_not_found: "找不到该页面"
   server_error: "服务器错误"
 
-  export_task_success_email_subject: "Writings.io - 导出完成"
-  import_task_success_email_subject: "Writings.io - 导入解析完成"
-  order_payment_success_email_subject: "Writings.io - 订单支付完成"
-  order_cancel_email_subject: "Writings.io - 订单被取消"
-  password_reset_email_subject: "Writings.io - 密码重置"
+  export_task_success_email_subject: "Writings - 导出完成"
+  import_task_success_email_subject: "Writings - 导入解析完成"
+  order_payment_success_email_subject: "Writings - 订单支付完成"
+  order_cancel_email_subject: "Writings - 订单被取消"
+  password_reset_email_subject: "Writings - 密码重置"
 
   order_paid_message: "订单支付成功，祝您写作愉快！"
   order_pending_message: "订单处理中，请稍后；处理完成后，系统会发送一封通知邮件。"
