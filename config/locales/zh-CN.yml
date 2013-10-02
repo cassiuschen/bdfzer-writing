@@ -138,7 +138,7 @@ zh-CN:
         billing: "付费服务"
       config_menu:
         account: "账户"
-        blog: "博客"
+        blog: "技术博客"
         help: "帮助"
         contact: "联系"
         logout: "退出"
