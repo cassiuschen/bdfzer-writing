@@ -31,7 +31,7 @@ class Space
   index({ :domain => 1 }, { :unique => true, :sparse => true})
   index({ :member_ids => 1 })
 
-  PLANS = %w(free base)
+  PLANS = %w(base free)
 
   validates :name, :presence => true, :uniqueness => {:case_sensitive => false}, :format => {:with => /\A[a-z0-9-]+\z/, :message => I18n.t('errors.messages.space_name') }, :length => {:in => 4..20}
   validates :domain, :format => {:with => /\A[a-zA-Z0-9_\-.]+\z/}, :uniqueness => {:case_sensitive => false}, :allow_blank => true
@@ -84,10 +84,10 @@ class Space
       when :base
         10.gigabytes
       else
-        100.megabytes
+        10.gigabytes
       end
     else
-      100.megabytes
+      10.gigabytes
     end
   end
 
