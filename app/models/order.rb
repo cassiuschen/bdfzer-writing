@@ -8,7 +8,7 @@ class Order
   field :discount, :type => Integer, :default => 0
 
   STATE = %w(opening pending paid completed canceled)
-  field :state, :default => 'opening'
+  field :state, :default => 'completed'
   field :pending_at, :type => Time
   field :completed_at, :type => Time
   field :canceled_at, :type => Time
@@ -19,7 +19,7 @@ class Order
   belongs_to :space
   has_many :alipay_notifies
 
-  scope :showable, where(:state.ne => 'opening')
+  scope :showable, where(:state.ne => 'completed')
 
   index({ :space_id => 1 })
 
@@ -27,11 +27,12 @@ class Order
   validates_inclusion_of :state, :in => STATE
 
   def total_price
-    price * quantity + discount
+    #price * quantity + discount
+    0
   end
 
   def end_at
-    start_at + quantity.months
+    start_at + 1000000 * quantity.months
   end
 
   STATE.each do |state|
