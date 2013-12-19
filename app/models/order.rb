@@ -42,23 +42,23 @@ class Order
   end
 
   def pend
-    if opening?
+    #if opening?
       update_attributes(
         :pending_at => Time.now.utc,
         :state       => 'pending'
       )
-    end
+    #end
   end
 
   def complete
-    if pending? or paid?
-      add_plan if pending?
+    #if pending? or paid?
+    #  add_plan if pending?
 
       update_attributes(
         :completed_at => Time.now.utc,
         :state       => 'completed'
       )
-    end
+    #end
   end
 
   def cancel
