@@ -39,11 +39,11 @@ class Space
   validate :except_host
 
   scope :in_plan, -> plan {
-    if plan.to_s == 'free'
-      scoped.or({:plan => plan}, {:plan_expired_at.lt => Time.now})
-    else
+    #if plan.to_s == 'free'
+    #  scoped.or({:plan => plan}, {:plan_expired_at.lt => Time.now})
+    #else
       where(:plan => plan, :plan_expired_at.gt => Time.now)
-    end
+    #end
   }
 
   def except_host
@@ -71,11 +71,11 @@ class Space
   end
 
   def in_plan?(plan)
-    if plan == :free
-      self.plan == plan || plan_expired_at.blank? || plan_expired_at < Time.now
-    else
+    #if plan == :free
+    #  self.plan == plan || plan_expired_at.blank? || plan_expired_at < Time.now
+    #else
       self.plan == plan && plan_expired_at.present? && plan_expired_at > Time.now
-    end
+    #end
   end
 
   def storage_limit
@@ -92,19 +92,19 @@ class Space
   end
 
   def version_limit
-    if plan_expired_at.present? && plan_expired_at > Time.now
-      case plan
-      when :base
-        5000
-      else
-        5000
-      end
-    else
-      5000
-    end
+    #if plan_expired_at.present? && plan_expired_at > Time.now
+      #case plan
+      #when :base
+        50000
+      #else
+      #  5000
+      #end
+    #else
+     # 5000
+    #end
   end
 
   def domain_enabled?
-    !in_plan?(:free)
+    !in_plan?(:base)
   end
 end
