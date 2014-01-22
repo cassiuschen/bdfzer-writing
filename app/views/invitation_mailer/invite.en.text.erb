@@ -6,7 +6,7 @@ Writings is a website to write, manage and publish articles.
 
 Accept this invitation to get started:
 
-<%= dashboard_invitation_url(:space_id => @space, :id => @invitation.token, :host => APP_CONFIG['host'], :protocol => 'https') %>
+<%= dashboard_invitation_url(:space_id => @space, :id => @invitation.token, :host => APP_CONFIG['host'], :protocol => 'http') %>
 
 <% if @space.members.any? %>
 Other members in this writing space:

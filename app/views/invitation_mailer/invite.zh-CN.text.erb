@@ -6,7 +6,7 @@ Writings 是一个提供文章编辑、管理和发布的服务。
 
 接受邀请并开始协作：
 
-<%= dashboard_invitation_url(:space_id => @space, :id => @invitation.token, :host => APP_CONFIG['host'], :protocol => 'https') %>
+<%= dashboard_invitation_url(:space_id => @space, :id => @invitation.token, :host => APP_CONFIG['host'], :protocol => 'http') %>
 
 <% if @space.members.any? %>
 该写作空间的其他成员：

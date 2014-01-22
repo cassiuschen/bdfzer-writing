@@ -1,5 +1,5 @@
 class InvitationMailer < ActionMailer::Base
-  default :from => "do-not-reply@writings.io"
+  default :from => "do-not-reply@writings.bdfzer.com"
 
   def invite(invitation_id)
     @invitation = Invitation.find_by :id => invitation_id

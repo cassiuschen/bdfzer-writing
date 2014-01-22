@@ -1,5 +1,5 @@
 class SystemMailer < ActionMailer::Base
-  default :from => "do-not-reply@writings.io"
+  default :from => "do-not-reply@writings.bdfzer.com"
 
   def export_task_success(export_task_id)
     @export_task = ExportTask.find export_task_id
