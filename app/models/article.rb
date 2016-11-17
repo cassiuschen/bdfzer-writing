@@ -43,6 +43,7 @@ class Article
   def set_published_at
     if status_changed? && publish?
       self.published_at ||= Time.now.utc
+      return true
     end
   end
 

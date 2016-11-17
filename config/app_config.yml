@@ -3,7 +3,7 @@ defaults: &defaults
   secret_key_base: '71198825e963169a145ef28fd6de8c3edbb69172d4441982b670c0f4374167f4445b1e593cb950e892002c65fdca29bfb079425679e395dde0e0db36ffce387b'
 
   # Main site setting
-  host: 'writings.bdfzer.com'
+  host: 'writings.cassiuschen.com'
   site_name: 'Writings'
   ssl: false
 
@@ -38,6 +38,7 @@ defaults: &defaults
 
 development:
   <<: *defaults
+  host: 'localhost'
 
 test:
   <<: *defaults

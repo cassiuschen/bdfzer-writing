@@ -1,6 +1,6 @@
 class @Editor.Formator
   constructor: (@editor) ->
-    @editable = editor.editable
+    @editable = @editor.editable
     @exec "defaultParagraphSeparator", "p"
 
   # inline format do nothing when is Collapsed,

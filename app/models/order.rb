@@ -19,7 +19,7 @@ class Order
   belongs_to :space
   has_many :alipay_notifies
 
-  scope :showable, where(:state.ne => 'completed')
+  scope :showable, -> {where(:state.ne => 'completed')}
 
   index({ :space_id => 1 })
 

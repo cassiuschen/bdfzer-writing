@@ -35,9 +35,9 @@ class @Editor.Toolbar
 
 
   detectBlocks: ->
-    type = document.queryCommandValue("formatBlock")
-    type = "code" if type is "pre" # rename
-    text = @toolbar.find("#format-block [data-command=" + type + "]").text()
+    typeS = document.queryCommandValue("formatBlock")
+    typeS = "code" if typeS == "pre" # rename
+    text = @toolbar.find("#format-block [data-command='#{typeS}']").text()
     text = @toolbar.find("#format-block [data-command]:first").text()  if text is ""
     @toolbar.find("#format-block .toolbar-button").text text
 

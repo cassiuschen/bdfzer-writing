@@ -180,21 +180,23 @@ class ArticleEdit
     @editor.editable.find("h1").text()
 
   createArticle: ->
+    _this = @
     @saveStart()
 
     return if @creating is true
     @creating = true
-
+    data = 
+      article:
+        title: @editor.editable.find("h1").text()
+        body: @editor.editable.html()
+        urlname: @article.data("urlname")
+        status: @article.data("status")
+      saveCount: _this.saveCount
+    console.log data
     # save change between ajax response
     $.ajax(
       url: "/~#{@space}/articles"
-      data:
-        article:
-          title: @editor.editable.find("h1").text()
-          body: @editor.editable.html()
-          urlname: @article.data("urlname")
-          status: @article.data("status")
-        saveCount: _this.saveCount
+      data: data
       type: "post"
       dataType: "json"
     ).done((data) =>

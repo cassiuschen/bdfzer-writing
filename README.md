@@ -1,8 +1,6 @@
 # Writings
 
-Source code of writings.bdfzer.com.
-
-writings.io will be opened at 2013-12-31.
+Source code of writings.cassiuschen.com.
 
 ![writings](https://raw.github.com/cassiuschen/bdfzer-writing/master/app/assets/images/writings-io-manager.png)
 
