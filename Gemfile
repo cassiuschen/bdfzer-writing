@@ -27,7 +27,7 @@ gem 'safe_yaml', '~> 0.9.3'
 gem 'mongoid_rails_migrations', '~> 1.0.1'
 gem 'alipay', '~> 0.0.2'
 gem 'recaptcha', require: 'recaptcha/rails'
-
+gem 'puma'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'sass-rails',   '~> 4.0.0'
 gem 'turbolinks', '~> 1.2.0'
